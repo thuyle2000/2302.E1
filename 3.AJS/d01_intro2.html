@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>angularjs-intro2</title>
+
+    <!-- 1. load thu vien angularjs -->
+    <script src="js/angular.min.js"></script>
+ 
+    <!-- 2. khai bao khoi hoat dong duoi thu vien angularjs [ng-app] -->
+    <div ng-app="myABC">
+        <div ng-controller="myCON" >
+            <h3>BILL</h3>
+            <label for="">Product: Coca cola</label> <br> <br>
+            <label for="">Quantity: </label>
+            <input type="number" name="qty" id="qty" placeholder="nhap so luong" 
+            ng-model="soluong"
+            ng-change="pay()"
+            > <br><br>
+
+            <label for="">Unit Price: </label>
+            <input type="number" name="price" id="pricr" placeholder="nhap don gia" 
+            ng-model="dongia"
+            ng-change="pay()"> <br><br>
+
+            <label for=""> Amount: {{soluong*dongia}}</label> <br><br>
+            <label for="">Payment : 
+                <span ng-bind="total"></span>
+            </label>
+            <hr>
+
+            <span>Today is {{today}}</span>
+           
+        </div>
+    </div>
+    <!-- 2. ket thuc khoi hoat dong duoi thu vien angularjs [ng-app] -->
+
+
+    <div>
+        <img src="images/coca.jpg" alt="" style="width: 30;"> <br>
+
+    </div>
+</body>
+
+<script>
+    let app = angular.module("myABC", []);
+    app.controller("myCON" , function($scope){
+        $scope.soluong=2;
+        $scope.dongia=11;
+
+        $scope.today = new Date().toLocaleString();
+        $scope.total = $scope.soluong*$scope.dongia*1.1;
+
+        $scope.pay=function(){
+            $scope.total = $scope.soluong*$scope.dongia*1.1;
+        }
+
+    });
+
+</script>
+
+</html>
