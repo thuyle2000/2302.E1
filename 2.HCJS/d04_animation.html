@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: relative;
+
+            animation-name: running;
+            animation-duration: 6s;
+            animation-delay: 0.5s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+
+        @keyframes running {
+            0% {background-color: red; left: 0px; top: 0px;}
+            25% {background-color: yellow; left: 600px; top: 0px;}
+            50% {background-color: blue; left: 600px; top: 300px;}
+            75% {background-color: green; left: 0px; top: 300px;}
+            100% {background-color: red; left: 0px; top: 0px;}
+        }
+    </style>
+</head>
+<body>
+    <h2>Animation CSS Demo</h2>
+    <div></div>
+</body>
+</html>

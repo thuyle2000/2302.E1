@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>windows</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <h2>window javascript demo</h2>
+    <hr>
+    <button type="button" id="btClose">close window</button>
+    <button type="button" id="btexpress" style="background-color: orangered;">vnexpress</button>
+
+    <script>
+        document.getElementById("btClose").onclick = function(){
+            let r = confirm("are u sure ?");
+            if(r==true){
+                window.close();
+            }
+        }
+
+        document.getElementById("btexpress").onclick = function(){
+            window.open("https://vnexpress.net/");
+        }
+    </script>
+</body>
+
+</html>

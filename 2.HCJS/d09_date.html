@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <h2>Date javascript demo</h2>
+    <hr>
+    <form action="d09_string2.html" onsubmit="return checkDate();">
+        <label for="">birthday</label>
+        <input type="date" value="2006-12-31" required id="dob">  
+        <br><br>
+
+        <button>Submit</button>
+    </form>
+
+    <script>
+        function checkDate(){
+            let d = new Date(document.getElementById("dob").value);
+
+            let year = d.getFullYear();
+            let currentYear = new Date().getFullYear();
+
+            let age = currentYear - year;
+
+            if(age<18){
+                alert(" Em chua 18 !!!");
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

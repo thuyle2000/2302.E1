@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <h2>Form Object javascript demo - Đối tượng FORM</h2>
+    <hr>
+    <form action="" name="formLOG" id="idLOG" onsubmit="login(event)">
+        <label for="">input email</label>
+        <input type="email" name="email" id="idMail" value="aptech@gmail.com" required> <br> <br>
+        <label for="">input password</label>
+        <input type="password" name="pass" id="idPass" value="123" required>
+        <br><br>
+        <button>Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <script>
+        function login(e){           
+            e.preventDefault();
+
+            //lay email
+            let mail = formLOG.email.value;
+            console.log(mail)
+
+            //lay password
+            let pass = formLOG.pass.value;
+            console.log(pass)
+
+            //xuat thong tin dang nhap
+            let s = `Hi, ${mail}.\nYour password is ${pass} ?`;
+            alert(s)
+        }
+    </script>
+</body>
+</html>

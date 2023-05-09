@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <h2>Object Javascript Demo</h2>
+    <hr>
+    <h3>Hinh chu nhat</h3>
+    <label for="">nhap chieu dai</label>
+    <input type="number" name="dai" id="dai" value="8" min="1">
+    <br><br>
+
+    <label for="">nhap chieu rong</label>
+    <input type="number" name="rong" id="rong" value="8" min="1">
+    <br><br>
+
+    <hr>
+    <label for="">dien tich</label>
+    <input type="text" name="dt" id="dt" readonly> <br> <br>
+    <label for="">chu vi</label>
+    <input type="text" name="cv" id="cv" readonly>
+
+
+</body>
+<script>
+    //dinh nghia doi tuong hinh chu nhat Rectangle. bao gom 2 thuoc tinh chieu dai , chieu rong va 2 phuong thuc tinh-dt , tinh-cv
+    function Rectangle(dai, rong){
+        this.length = dai;
+        this.width = rong;
+
+        this.area = function(){
+            return this.length* this.width;
+        }
+
+        this.perimeter = function(){
+            return (this.length + this.width)*2;
+        }
+    }
+
+    function calculate(){
+        let d = parseInt(document.getElementById("dai").value);
+        let r = parseInt(document.getElementById("rong").value);
+
+        let hcn = new Rectangle(d, r);
+        document.getElementById("dt").value = hcn.area();
+        document.getElementById("cv").value = hcn.perimeter();
+    }
+
+    document.getElementById("dai").onchange = calculate;
+    document.getElementById("rong").onchange = calculate;
+    window.onload = calculate;
+
+</script>
+</html>

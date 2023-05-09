@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table-css</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        table {
+            border: 2px solid green;
+            padding: 5px 30px;
+            border-collapse: collapse;
+        }
+
+        th{
+            padding: 4px 15px;
+        }
+        td
+        {
+            border: thin solid goldenrod;
+            padding: 4px 15px;
+        }
+
+        tbody td:nth-child(1),
+        tbody td:nth-child(5)
+        {
+            text-align: right;
+        }
+
+
+        tbody>tr:nth-child(even){
+            background-color: azure;
+        }
+
+        tbody>tr:hover{
+            background-color: antiquewhite;
+        }
+        caption {
+            padding-bottom: 10px;
+            font-size: 1.4em;
+            font-weight: bolder;
+            color: chocolate;
+        }
+
+        thead{
+            background-color: green;
+            color: antiquewhite;
+        }
+
+        tfoot{
+            background-color: lightsalmon;
+        }
+
+        .right{
+            text-align: right;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h2>Table HTML Demo</h2>
+    <hr>
+    <div>
+        <table>
+            <caption>List Of Students</caption>
+            <thead>
+                <tr>
+                    <th>Sr.no</th>
+                    <th>Full name</th>
+                    <th>Gender</th>
+                    <th>Email</th>
+                    <th>Mark</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Nghiem Kha An</td>
+                    <td>female</td>
+                    <td>an@fpt.edu.vn</td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Huynh Yen Phung</td>
+                    <td>female</td>
+                    <td>phung@fpt.edu.vn</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Nguyen Quoc Duong</td>
+                    <td>male</td>
+                    <td>duong@fpt.edu.vn</td>
+                    <td>55</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Phan van Giu</td>
+                    <td>male</td>
+                    <td>giu@fpt.edu.vn</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Huynh van Minh Nhat</td>
+                    <td>male</td>
+                    <td>nhat@fpt.edu.vn</td>
+                    <td>40</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Nguyen Thanh Nhan</td>
+                    <td>male</td>
+                    <td>nhan@fpt.edu.vn</td>
+                    <td>30</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Ngo Dinh Tan</td>
+                    <td>male</td>
+                    <td>tan@fpt.edu.vn</td>
+                    <td>95</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2" rowspan="2">Summary</td>
+                    <td colspan="2" class="right">Pass</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="right">Fail</td>
+                    <td>1</td>
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>
+</body>
+
+</html>

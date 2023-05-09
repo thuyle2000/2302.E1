@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <h2>String javascript demo</h2>
+    <hr>
+    <label for="">choose image</label>
+    <input type="file" name="pic" id="pic"> <br><br>
+    <img src="" alt="" id="hinh" >
+</body>
+<script>
+    document.getElementById("pic").onchange = function(){
+        let picName =  new String(document.getElementById("pic").value);
+        console.log(picName);
+        
+        let pos = picName.lastIndexOf("\\");
+        let filename = `images${picName.substring(pos)}`;
+
+        document.getElementById("hinh").setAttribute("src",filename);
+        document.getElementById("hinh").setAttribute("width",300);
+    }
+</script>
+</html>

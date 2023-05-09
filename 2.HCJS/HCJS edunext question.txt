@@ -1,0 +1,33 @@
+LINK EDUNEXT: https://fai-edunext.fpt.edu.vn/home
+
+
+s21+s22 (Tue, 25-Apr-2023)
+
+s21 - Mobile Web app
+G1.	1/ List of mobile Platforms?
+G8.	2/ Design Aspects of Mobile Web Site ? Architectural Aspects of Mobile Web Site?
+G3. 3/ Explain Heading Structure? Explain Document Structure?
+G4.	4/ Explain Css for mobile? How to Optimizing a Site for a Mobile?
+
+s22 - Canvas & javascript
+G5. 5/ Explain Canvas Element? 
+G6.	6/ How to working with Drawing Object?
+G7.	7/ How to use canvas with image, with text? How to use Transparency for Text in Canvas?
+G2.	8/ How to use Event with jQuery? 
+
+
+
+
+s23+24 (Thu, 27-Apr-2023 )
+S23 - HTML5 Web storage
+G3. - 1/ Explain Web storage in HTML5
+G2. - 2/ Explain session storage
+G6. - 3/ Explain local storage  
+G1. - 4/ Explain the Indexed DB API 
+
+S24 - HTML5 Geolocation
+G5. - 5/ Explain geolocation and its use in HTML5
+G4. - 6/ Explain the Google Maps API
+G7. - 7/ Explain the drag-and-drop operations in HTML5
+G8. - 8/ Explain the concept of Application Cache
+

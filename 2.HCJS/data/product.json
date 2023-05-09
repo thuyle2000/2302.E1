@@ -1,0 +1,30 @@
+[
+  {
+    "id": "P01",
+    "name": "coca cola",
+    "price": 12.5,
+    "picture": "P01.jpg",
+    "status": true
+  },
+  {
+    "id": "P02",
+    "name": "pepsi cola",
+    "price": 11.5,
+    "picture": "P02.jpg",
+    "status": true
+  },
+  {
+    "id": "P03",
+    "name": "snack",
+    "price": 23,
+    "picture": "P03.jpg",
+    "status": false
+  },
+  {
+    "id": "P04",
+    "name": "chocolate",
+    "price": 40,
+    "picture": "P04.jpg",
+    "status": true
+  }
+]

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <h2>String javascript demo</h2>
+    <hr>
+    <label for="">input string 1: </label>
+    <input type="text" name="s1" id="s1" value="today is tuesday !"> <br><br>
+    <label for="">input string 2: </label>
+    <input type="text" name="s2" id="s2" value="How Are You ?"> <br><br>
+
+    <input type="button" value="Test" onclick="testString()"> <br><br>
+
+    <label for="" style="vertical-align: top;">result:</label>
+    <textarea name="res" id="res" cols="30" rows="10" style="width: 400px;"></textarea>
+</body>
+<script>
+    function testString() {
+        let a = [];
+        let s1 = new String(document.getElementById('s1').value);
+        let s2 = new String(document.getElementById('s2').value);
+
+        let temp = s1.charAt(6);
+        a.push(`- s1.charAt(6) = [${temp}]`);
+
+        temp = s1.concat(s2);
+        a.push(`- s1.concat(s2) = [${temp}]`);
+
+        temp = s1.indexOf("day");
+        a.push(`- s1.indexOf("day") = [${temp}]`);
+
+        temp = s1.lastIndexOf("day");
+        a.push(`- s1.lastIndexOf("day") = [${temp}]`);
+
+        temp = s1.search("day");
+        a.push(`- s1.search("day") = [${temp}]`);
+
+        temp = s1.search("monday");
+        a.push(`- s1.search("monday") = [${temp}]`);
+
+        temp = s1.replace('ay', 'ei');
+        a.push(`- s1.replace('ay','ei') = [${temp}]`);
+
+        temp = s1.replace(/ay/g, 'ei');
+        a.push(`- s1.replace(/ay/g,'ei') = [${temp}]`);
+
+        temp = s1.split(' ').join('*');
+        a.push(`- s1.split(' ').join('*') = [${temp}]`);
+
+        temp = s1.substring(6, 10);
+        a.push(`- s1.substring(6,10) = [${temp}]`);
+
+        temp = s1.substring(9);
+        a.push(`- s1.substring(9) = [${temp}]`);
+
+        temp = s1.toUpperCase();
+        a.push(`- s1.toUpperCase() = [${temp}]`);
+
+        document.getElementById("res").value = a.join('\n');
+    }
+
+</script>
+
+</html>

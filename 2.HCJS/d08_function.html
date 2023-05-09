@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <h2>Function Javascript Demo</h2>
+    <hr>
+    <h4>Mini Casio</h4>
+    <label for="">input n1</label>
+    <input type="number" name="n1" id="n1" value="100"> <br><br>
+
+    <label for="">input n2</label>
+    <input type="number" name="n2" id="n2" value="30"> <br><br>
+
+    <label for="">operator</label>
+    <select name="op" id="op" onchange="casio(this.value)">
+        <option value="+">add</option>
+        <option value="-">sub</option>
+        <option value="*">mul</option>
+        <option value="/">div</option>
+        <option value="%">mod</option>
+    </select> <br><br>
+    <label for="" style="color: red;">result</label>
+    <input type="text" name="result" id="result" readonly style="background-color: lemonchiffon; color: black;">
+
+</body>
+
+<script>
+    function casio(op) {
+        let n1 = document.getElementById("n1").value;
+        let n2 = document.getElementById("n2").value;
+        // console.log(n1);
+        // console.log(`n2 = [${n2}]`);
+        // console.log(isNaN(n2));
+        if (n1 == "") {
+            alert('input a number in n1, plz !');
+            document.getElementById("n1").focus();
+            return;
+        }
+        if (n2 == "") {
+            alert('input a number in n2, plz !');
+            document.getElementById("n2").focus();
+            return;
+        }
+        n1 = parseInt(n1);
+        n2 = parseInt(n2);
+
+        let r = 0;
+        switch (op) {
+            case '+':
+                r = n1 + n2;
+                break;
+            case '-':
+                r = n1 - n2;
+                break;
+            case '*':
+                r = n1 * n2;
+                break;
+            case '/':
+                r = n1 / n2;
+                break;
+            case '%':
+                r = n1 % n2;
+                break;
+        }
+        document.getElementById("result").value = r;
+    }
+</script>
+
+</html>

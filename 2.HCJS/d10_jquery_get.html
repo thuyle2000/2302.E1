@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-get</title>
+    <style>
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        table {
+            width: auto;
+            padding: 10px;
+            border: salmon solid thin;
+        }
+
+        td {
+            padding: 3px 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>jQuery Ajax Get() demo</h2>
+    <hr>
+    <button>Get Data</button> <br> <br>
+    <div id="data">
+
+    </div>
+
+</body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<script>
+    $(function () {
+        $("button").click(function (e) {
+            e.preventDefault();
+
+            $.getJSON("data/product.json",
+                function (data, textStatus, jqXHR) {
+                    console.log(data);
+                    let s = [];
+
+                    s.push('<table>');
+                    s.push("<tr><th>id</th><th>name</th><th>price</th> <th>image</th><th>status</th></tr>");
+                    s.push('<tbody>');
+
+                    data.forEach(item => {
+                        s.push(`<tr><td>${item.id}</td><td>${item.name}</td><td>${item.price}</td><td>${item.picture}</td>
+                            <td>${item.status}</td></tr>`)
+                    });
+                    
+                    s.push('</tbody>');
+                    s.push('</table>');
+
+                    $("#data").html(s.join(''));
+
+
+                }
+            );
+        });
+
+    });
+</script>
+
+</html>

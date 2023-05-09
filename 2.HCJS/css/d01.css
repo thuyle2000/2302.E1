@@ -1,0 +1,37 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+img{
+    width: 50%;
+    border-radius: 25%;
+}
+h2{
+    color: red;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2em;
+    text-shadow: 3px 3px 3px gray;
+}
+
+div{
+    width: 70%;
+    margin: auto;
+    background-color: antiquewhite;
+    padding: 20px;
+    text-align: center;
+}
+button{
+    background-color: aquamarine;
+    border-color: aliceblue;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px gainsboro;
+    color: darkblue;
+    padding: 5px 15px;
+    
+}
+footer{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: pink;
+    color: black;
+    text-align: center;
+}

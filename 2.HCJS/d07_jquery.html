@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery</title>
+    <link rel="stylesheet" href="css/form.css">
+
+    <style>
+        img {
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>jquery demo</h2>
+    <hr>
+    <button id="btHide">Umbala ...</button> <br><br>
+    <img src="images/aquarium-fish.jpg" alt="" id="fish">
+    <!-- <img src="images/gold-fish.jpg" alt=""> -->
+</body>
+
+<script src="js/jquery-3.6.4.min.js"></script>
+<script>
+    //lap trinh cho su kien hover tren hinh co id='fish'
+    $("#fish").hover(
+        function () {
+            $("#fish").attr("src", "images/gold-fish.jpg");
+        },
+        function () {
+            $("#fish").attr("src", "images/aquarium-fish.jpg");
+        }      
+    )
+
+    //lap trinh cho su kien click tren button 
+    $("button").click(function(){
+        $("#fish").toggle(1000);
+    });
+</script>
+
+</html>

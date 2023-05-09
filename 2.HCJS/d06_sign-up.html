@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign-up</title>
+    <link rel="stylesheet" href="css/form.css">
+    <style>
+        label{
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+
+
+        <form action="d05_login.html" id="formDK">
+            <h2>Sign Up</h2>
+            <hr>
+
+            <label for="">username</label>
+            <input type="text" name="uid" id="uid" required autofocus form="formDK"> <br><br>
+
+            <label for="">password</label>
+            <input type="password" name="pass" id="pass" required> <br> <br>
+
+            <label for="">password confirm</label>
+            <input type="password" name="pass2" id="pass2" required
+            placeholder="nhap lai mat ma"> <br> <br>
+
+            <label for="">email</label>
+            <input type="email" name="email" id="email"
+            placeholder="nhap dia chi email">
+            <br><br>
+
+            <label for="">gender</label>
+            male <input type="radio" name="gender" id="rmale" value="nam" checked >
+            female <input type="radio" name="gender" id="rfemale" value="nu">
+            other <input type="radio" name="gender" id="rother" value="khac"> 
+            <br> <br>
+
+            <label for="">languages</label>
+            <input type="checkbox" name="ckEN" id="ckEN" value="Anh" checked> EN - 
+            <input type="checkbox" name="ckFR" id="ckFR" value="Phap" > FR - 
+            <input type="checkbox" name="ckJP" id="ckJP" value="Nhat" checked> JP  
+            <br><br>
+
+            <label for="">location</label>
+            <select name="location" id="location" required>
+                <option value="">---Select a City---</option>
+                <option value="SG">Saigon</option>
+                <option value="HU" selected>Hue</option>
+                <option value="HN">Hanoi</option>
+                <option value="DN">Danang</option>
+                <option value="CT">Cantho</option>
+                <option value="BH">BienHoa</option>
+            </select>
+            <br><br>
+
+            <label for="">birthday</label>
+            <input type="date" name="dob" id="dob" value="2000-12-25">
+            <br><br>
+
+            <label for="">level</label>
+            <input type="number" name="level" id="level" min="1" max="5" value="2" required>
+            <br> <br>
+
+            <label for="" class="comment">comment</label>
+            <textarea name="comment" id="comment" cols="25" rows="4"></textarea>
+            <br><br>
+
+            <button>Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </div>
+</body>
+</html>

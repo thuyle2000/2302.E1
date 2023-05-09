@@ -1,0 +1,18 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2{
+    color: deepskyblue;
+}
+nav{
+    margin-top: 20px;
+    background-color: darkorange;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+    padding: 20px;
+    color: antiquewhite;
+    font-weight: bold;
+}

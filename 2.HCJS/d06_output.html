@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>output</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <h2>output HTML Demo</h2>
+    <hr>
+    <form oninput="thanh_tien.value=sp.value*soluong.value">
+        <label for="">product</label>
+        <select name="sp" id="sp" required>
+            <option value="12">coca cola</option>
+            <option value="11">pepsi cola</option>
+            <option value="20">chocolate</option>
+            <option value="9">snack</option>
+            <option value="30">pizza</option>
+        </select> <br> <br>
+
+        <label for="">quantity</label>
+        <input type="number" name="soluong" id="soluong" required min="1" max="20" value="1"> <br> <br>
+
+        
+        <label for="">total amount ($)</label>
+        <output name="thanh_tien"></output>
+
+    </form>
+</body>
+</html>

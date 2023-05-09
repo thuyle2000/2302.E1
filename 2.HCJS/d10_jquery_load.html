@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery-load</title>
+    <style>
+        *{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .parent{
+            display: flex;
+            justify-content: space-between;
+            border: solid thin sandybrown;
+            width: 100%;
+            padding: 5px;
+        }
+        #k1, #k3{
+            background-color: bisque;
+            height: 80vh;
+            width: 20%;
+            padding: inherit;
+
+        }
+
+        #k2{
+            background-color: deepskyblue;
+            width: 58%;
+            padding: inherit;
+        }
+
+        input[type="text"], input[type="password"]{
+            width: 80%;
+        }
+        button{
+            width: 48%;
+        }
+       
+        table{
+            width: 80%;
+            border: thin solid green;
+            box-shadow: 3px 3px 3px lightblue;
+        }
+    </style>
+
+ 
+</head>
+
+<body>
+    <h2>Ajax jQuery Load() Demo</h2>
+    <hr>
+    <div class="parent">
+        <div id="k1">
+            <br>
+            <button id="btPro">load product</button>
+            <br> <br>
+            <button id="btPic">load picture</button>
+        </div>
+        <div id="k2">2456</div>
+        <div id="k3">
+            <form action="">
+                <legend>Sign-in</legend>
+                <label for="">username</label> <br>
+                <input type="text" name="uid" id="uid">
+                <br><br>
+                <label for="">password</label> <br>
+                <input type="password" name="pwd" id="pwd">
+                <br><br>
+                <label for="">remember me</label>
+                <input type="checkbox" name="rem" id="rem" value="true" checked>
+                <br><br>
+                <button>Submit</button>
+                <button type="reset">Reset</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<script>
+    $(function () {
+        $("#btPro").click(function (e) { 
+            e.preventDefault();
+
+            $("#k2").load("d10_product.html", "data", function (response, status, request) {
+               alert("Bang bao gia thang 4");
+               console.log(status);
+               console.log(response);
+            });
+            
+        });
+
+        $("#btPic").click(function (e) { 
+            e.preventDefault();
+
+            $("#k2").load("d10_picture.html");
+            alert("Hinh ca thang 4 !");
+            
+        });
+
+    });
+
+
+</script>
+
+</html>

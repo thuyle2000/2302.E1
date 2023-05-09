@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+    <link rel="stylesheet" href="css/form.css">
+</head>
+<body>
+    <h2>Array Javascript Demo</h2>
+    <hr>
+
+    <input type="button" value="generate" onclick="initArray()"> 
+    <input type="button" value="sort" onclick="sortArray()">
+    <p id="source"></p>
+    <p id="target"></p>
+</body>
+<script>
+    var a =[]; //khai bao mang a, chua co du lieu
+    function initArray(){
+        a.length=0;
+        for (let i = 0; i < 10; i++) {
+            a.push(Math.round( Math.random()*100));
+        }
+
+        console.log('a = '+ a);
+        document.getElementById("source").innerHTML = a.join(' - ');
+        document.getElementById("target").innerHTML ="";
+    }
+
+    function sortArray(){
+        if(a.length==0){
+            document.getElementById("source").innerHTML ='<b>No data found !</b>';
+        }
+        else{
+            a.sort((x,y) => y-x);
+            document.getElementById("target").innerHTML = a.join(' * ');
+        }
+    }
+</script>
+</html>

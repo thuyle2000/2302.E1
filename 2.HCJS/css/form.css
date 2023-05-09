@@ -1,0 +1,74 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form {
+    border: thin solid burlywood;
+    padding: 20px 40px;
+    background-color: antiquewhite;
+    width: fit-content;
+    box-shadow: 5px 5px 3px lightgray;
+}
+
+input:required {
+    border-bottom: red solid;
+    border-top: none;
+    border-left: none;
+}
+
+label {
+    width: 150px;
+    display: inline-block;
+}
+
+button,
+input[type='submit']
+ {
+    padding: 3px 18px;
+    background-color: red;
+    color: antiquewhite;
+    border-color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.02em;
+    border-radius: 10px;
+}
+
+button[type='reset'] {
+    background-color: green;
+}
+
+button[type='button']
+{
+    background-color: darkcyan;
+}
+
+input[type='button'] 
+ {
+    padding: 3px 18px;
+    background-color: darkcyan;
+    color: antiquewhite;
+    border-color: aliceblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.02em;
+    border-radius: 10px;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='date'],
+input[type='number'],
+textarea
+{
+    width: 150px;
+    padding: 3px 10px;
+}
+
+select{
+    width: 175px;
+    padding: 3px 10px;
+}
+
+.comment{
+    vertical-align: top;
+}
