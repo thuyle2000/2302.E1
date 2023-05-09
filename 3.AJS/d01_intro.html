@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>angularjs-intro</title>
+
+    <!-- 1. load thu vien angularjs -->
+    <script src="js/angular.min.js"></script>
+
+</head>
+
+<body>
+    <h2>AngularJS Introduction Demo</h2>
+    <hr>
+
+    <!-- 2. khai bao khoi hoat dong duoi thu vien angularjs [ng-app] -->
+    <div ng-app ng-init="soluong=1;dongia=14" >
+        <h3>BILL</h3>
+        <label for="">Product: Coca cola</label> <br> <br>
+        <label for="">Quantity: </label>
+        <input type="number" name="qty" id="qty" placeholder="nhap so luong" 
+        ng-model="soluong"> <br><br>
+
+        <label for="">Unit Price: </label>
+        <input type="number" name="price" id="pricr" placeholder="nhap don gia" ng-model="dongia" > <br><br>
+
+        <label for=""> Amount: {{soluong*dongia}}</label>
+        <span></span>
+    </div>
+    <!-- 2. ket thuc khoi hoat dong duoi thu vien angularjs [ng-app] -->
+
+
+    <div>
+        <img src="images/coca.jpg" alt="" style="width: 30;"> <br>
+        
+    </div>
+</body>
+
+</html>
