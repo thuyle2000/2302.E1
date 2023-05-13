@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ng-show</title>
+    <!-- nhung thu vien angularjs tu mang CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!-- nhung thu vien bootstrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+</head>
+
+<body ng-app="abc">
+    <div class="container">
+        <h2>ng-show Demo</h2>
+        <hr>
+        <input type="checkbox" ng-model="show"> show picture <br>
+        <img src="images/coca.jpg" alt="coca cola, nhe!" ng-show="show">
+    </div>
+</body>
+<script>
+    let app = angular.module("abc",[]);
+</script>
+</html>

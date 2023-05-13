@@ -41,8 +41,8 @@
             </thead>
             <tbody>
                 <tr ng-repeat="item in data">
-                    <td> {{item.id}} </td>
-                    <td> {{item.name}} </td>
+                    <td> {{item.id | lowercase}} </td>
+                    <td> {{item.name | uppercase}} </td>
                     <td> {{item.hours}}</td>
                     <td> {{item.fee}}</td>
                 </tr>
