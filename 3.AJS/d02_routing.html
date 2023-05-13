@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>route</title>
+
+    <!-- nhung thu vien angular, angular-route -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+    <!-- nhung thu vien bootstrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <style>
+        a {
+            padding: 5px 20px;
+        }
+
+        footer {
+            text-align: center;
+            border-top: tomato double medium;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body ng-app="abc">
+    <div class="container">
+        <nav>
+            <a href="#/!">Home</a>
+            <a href="#!monhoc">Danh sach mon hoc</a>
+            <a href="#!lienhe">Lien he</a>
+            <a href="#!dangky">Dang ky</a>
+        </nav>
+        <hr>
+
+        <!-- vung hien thi noi dung cac trang link toi -->
+        <div ng-view></div>
+
+        <footer>
+            Copyright by Team 2302.E1, May 2023.
+        </footer>
+    </div>
+
+    <script>
+        var app = angular.module("abc", ["ngRoute"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/", {
+                    // templateUrl: "main.htm"
+                })
+                .when("/monhoc", {
+                    templateUrl: "d02_route_filter.html"
+                })
+                .when("/lienhe", {
+                    templateUrl: "d02_ngShow.html"
+                })
+                .when("/dangky", {
+                    templateUrl: "d02_route_ngRepeat.html"
+                });
+        });
+
+
+        //lap trinh cho controller [controlData]
+        app.controller("controlData", function ($scope) {
+            //khoi tao mang json [data] chua ds cac mon hoc
+            $scope.data = [
+                { "id": "LBEP", "name": "Lap trinh co ban", "hours": 48, "fee": 120 },
+                { "id": "HCJS", "name": "Thiet ke Web : HTML/CSS/JS", "hours": 52, "fee": 200 },
+                { "id": "AJS", "name": "Framework Angular/ AngularJS", "hours": 16, "fee": 80 },
+                { "id": "Pro_1", "name": "eProject HK1", "hours": 28, "fee": 200 },
+                { "id": "DMS", "name": "He QTCSDL Quan He - SQLSERVER", "hours": 52, "fee": 220 }
+            ];
+        });
+    </script>
+</body>
+
+</html>

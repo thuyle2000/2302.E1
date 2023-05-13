@@ -1,0 +1,55 @@
+<style>
+    thead th {
+        color: red;
+    }
+
+    tbody td:nth-child(4) {
+        text-align: right;
+    }
+
+    tbody td:nth-child(5) {
+        text-align: right;
+    }
+</style>
+
+
+<div class="container-fluid" ng-controller="controlData">
+    <div>
+        <label for="">Ten mon hoc</label>
+        <input type="text" ng-model="ten_tk">
+    </div>
+
+    <div>
+        <h2>Danh sach cac mon hoc</h2>
+
+        <table class="table table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>So TT</th>
+                    <th>Ma MH</th>
+                    <th>Ten Mon Hoc</th>
+                    <th>So gio hoc</th>
+                    <th>Hoc Phi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr ng-repeat="item in data | filter:{name:ten_tk}"> -->
+                <tr ng-repeat="item in data | filter:ten_tk">
+                    <td> {{$index+1}} </td>
+                    <td> {{item.id | lowercase}} </td>
+                    <td> {{item.name | uppercase}} </td>
+                    <td> {{item.hours}}</td>
+                    <td> {{item.fee}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<script>
+
+
+</script>
+
+</html>
