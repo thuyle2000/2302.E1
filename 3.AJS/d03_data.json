@@ -1,0 +1,34 @@
+{
+  "modules": [
+    {
+      "id": "LBEP",
+      "name": "Lap trinh co ban",
+      "hours": 48,
+      "fee": 120
+    },
+    {
+      "id": "HCJS",
+      "name": "Thiet ke Web : HTML/CSS/JS",
+      "hours": 52,
+      "fee": 200
+    },
+    {
+      "id": "AJS",
+      "name": "Framework Angular/ AngularJS",
+      "hours": 16,
+      "fee": 80
+    },
+    {
+      "id": "Pro_1",
+      "name": "eProject HK1",
+      "hours": 28,
+      "fee": 200
+    },
+    {
+      "id": "DMS",
+      "name": "He QTCSDL Quan He - SQLSERVER",
+      "hours": 52,
+      "fee": 220
+    }
+  ]
+}

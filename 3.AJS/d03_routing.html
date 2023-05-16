@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>route</title>
+
+    <!-- nhung thu vien angular, angular-route -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+    <!-- nhung thu vien bootstrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <style>
+        a {
+            padding: 5px 20px;
+        }
+
+        footer {
+            text-align: center;
+            border-top: tomato double medium;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
+    </style>
+
+</head>
+
+<body ng-app="abc">
+    <div class="container">
+        <nav>
+            <a href="#/!">Home</a>
+            <a href="#!list">Danh sach mon hoc</a>
+            <a href="#!add">Them mon hoc</a>
+            <a href="#!contact">Lien he</a>
+        </nav>
+        <hr>
+
+        <!-- vung hien thi noi dung cac trang link toi -->
+        <div ng-view ></div>
+
+        <footer>
+            Copyright by Team 2302.E1, May 2023.
+        </footer>
+    </div>
+
+    <script>
+        var app = angular.module("abc", ["ngRoute"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/", {
+                    // templateUrl: "main.htm"
+                })
+                .when("/list", {
+                    templateUrl: "d03_route_list.html"
+                })
+                .when("/add", {
+                    templateUrl: "d03_route_add.html"
+                })
+                .when("/contact", {
+                    // templateUrl: "d02_route_ngRepeat.html"
+                });
+        });
+
+
+        //lap trinh cho ung dung app, tim doc du lieu tu tap tin [d03_data.json] va luu vo bien [data] (pham vi ung ung)
+        app.run(function($rootScope, $http){
+            $rootScope.data = [];
+            $http.get("d03_data.json").then(function(r){
+                $rootScope.data = r.data.modules;
+            })
+        });
+
+        
+        //lap trinh cho controller [controlData] cua file [d03_route_list.html]
+        app.controller("controlData", function($scope){
+
+        });
+
+        
+    </script>
+</body>
+
+</html>
