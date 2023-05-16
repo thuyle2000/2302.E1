@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+
+    <!-- nhung thu vien angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+
+    <!-- nhung thu vien bootstrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <style>
+        span.error{
+            color:red;
+        }
+    </style>
+</head>
+
+<body ng-app="abc">
+    <div class="container">
+        <h2>LOGIN</h2>
+        <form name="formLOG" action="">
+            <div>
+                <label for="">email: </label> <br>
+                <input type="email" name="user" ng-model="abcUser" required> 
+
+                <span class="error" ng-show="formLOG.user.$error.required">* email cannot be blank | </span>
+                <span class="error" ng-show="formLOG.user.$invalid"> invalid email </span>                
+            </div>
+
+            <div>
+                <br>
+                <label for="">password</label> <br>
+                <input type="password" name="pass" ng-model="abcPass" required > 
+                <span class="error" ng-show="formLOG.pass.$error.required">* password is required</span>
+
+            </div>
+
+            <div>
+                <br>
+                <input type="submit" value="Submit" class="btn btn-danger"
+                ng-disabled="formLOG.$invalid">
+                
+                <input type="reset" value="Reset" class="btn btn-info">
+            </div>
+            <br>
+  
+
+        </form>
+    </div>
+
+</body>
+<script>
+    let app = angular.module("abc",[]);
+</script>
+
+
+</html>

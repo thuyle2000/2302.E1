@@ -40,7 +40,7 @@
         <hr>
 
         <!-- vung hien thi noi dung cac trang link toi -->
-        <div ng-view></div>
+        <div ng-view ></div>
 
         <footer>
             Copyright by Team 2302.E1, May 2023.
@@ -52,7 +52,7 @@
         app.config(function ($routeProvider) {
             $routeProvider
                 .when("/", {
-                    // templateUrl: "main.htm"
+                    templateUrl: "main.htm"
                 })
                 .when("/monhoc", {
                     templateUrl: "d02_route_filter.html"
