@@ -30,6 +30,7 @@
                     <th>Ten Mon Hoc</th>
                     <th>So gio hoc</th>
                     <th>Hoc Phi</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -40,6 +41,7 @@
                     <td> {{item.name | uppercase}} </td>
                     <td> {{item.hours}}</td>
                     <td> {{item.fee}}</td>
+                    <td> <button type="button" class="btn btn-info" ng-click="remove(item.id)">remove</button> </td>
                 </tr>
             </tbody>
         </table>

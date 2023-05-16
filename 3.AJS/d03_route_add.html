@@ -1,0 +1,55 @@
+
+<div class="container" ng-controller="controlADD">
+    <h3>Add New Module</h3>
+
+    <form name="formADD" ng-submit="add()">
+        <div>
+            <label for="">ID: </label> <br>
+            <input type="text" name="moduleID" ng-model="moduleID" required>
+
+            <span class="error" ng-show="formADD.moduleID.$error.required">* module ID cannot be blank  </span>
+            
+        </div>
+
+        <div>
+            <br>
+            <label for="">name</label> <br>
+            <input type="text" name="moduleName" ng-model="moduleName" 
+            min = "4" max="100"
+            required>
+
+            <span class="error" ng-show="formADD.moduleName.$error.required">* module Name can not be blank</span>
+        </div>
+
+        <div>
+            <br>
+            <label for="">hours</label> <br>
+            <input type="number" name="modulehour" ng-model="hour" required min="4" max="100">
+
+            <span class="error" ng-show="formADD.modulehour.$error.required">* module hour can not be blank | </span>
+
+            <span class="error" ng-show="formADD.modulehour.$invalid">* invalid hours</span>
+        </div>
+
+        <div>
+            <br>
+            <label for="">fee</label> <br>
+            <input type="number" name="modulefee" min="0" max="999" ng-model="fee" required>
+
+            <span class="error" ng-show="formADD.modulefee.$error.required">* fee can not be blank | </span>
+
+            <span class="error" ng-show="formADD.modulefee.$invalid">* invalid fee</span>
+        </div>
+
+        <div>
+            <br>
+            <input type="submit" value="Submit" class="btn btn-danger" ng-disabled="formADD.$invalid">
+
+            <input type="reset" value="Reset" class="btn btn-info">
+        </div>
+        <br>
+
+
+    </form>
+
+</div>
