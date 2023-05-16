@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>custom-directive</title>
+    <!-- nhung thu vien angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+    <!-- nhung thu vien bootstrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+
+<body ng-app="abc">
+    <div class="container">
+        <h2>Custom Directive Angular</h2>
+        <hr>
+
+        <p>
+            su dung directive [ng-cheer] nhu la 1 HTML Element
+            <ng-cheer>
+        </p>
+
+        <p>
+            su dung directive [ng-cheer] nhu la 1 HTML Attrtibute
+            <span ng-cheer>
+        </p>       
+    </div>
+
+    <script>
+        //khai bao bien module app
+        let app = angular.module("abc", []);
+
+        //dinh nghia directive [ngCheer]
+        app.directive("ngCheer", function () {
+            return {
+                restrict: 'AE',
+                template: '<h3>Welcome to AngularJS !</h3>'
+            };
+        });
+
+    </script>
+</body>
+
+</html>
