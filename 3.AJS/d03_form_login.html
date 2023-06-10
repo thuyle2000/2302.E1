@@ -24,13 +24,13 @@
 <body ng-app="abc">
     <div class="container">
         <h2>LOGIN</h2>
-        <form name="formLOG" action="">
+        <form name="formLOG" >
             <div>
                 <label for="">email: </label> <br>
                 <input type="email" name="user" ng-model="abcUser" required> 
 
-                <span class="error" ng-show="formLOG.user.$error.required">* email cannot be blank | </span>
-                <span class="error" ng-show="formLOG.user.$invalid"> invalid email </span>                
+                <span class="error" ng-show="formLOG.user.$error.required">* email cannot be blank</span>
+                <span class="error" ng-show="formLOG.user.$error.email"> invalid email </span>                
             </div>
 
             <div>
