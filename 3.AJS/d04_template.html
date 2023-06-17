@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="dynamictemp">
+
+<head>
+    <meta charset="utf-8" />
+    <title>AngularJS Dynamic Template</title>
+    <script>document.write('<base href="' + document.location + '" />');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js">
+    </script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-controller="MainCtrl">
+    <select ng-model="model.loanType">
+        <option value="">Select Loan Type</option>
+        <option value="1">Personal Loan</option>
+        <option value="2">Housing Loan</option>
+    </select>
+    <loan-detail-form loan="model" />
+    <br />
+    <br />
+
+    <script type="text/ng-template" id="template1">
+    <form>
+        <br/>
+        <br/>
+        <fieldset>
+            <legend>Personal Loan</legend>
+            <label>Document needed:</label>
+            <input type="text" ng-model="loan.attributeA">
+        </fieldset>
+    </form>
+    </script>
+
+    <!--Design the look as an enclosing box with elements inside-->
+    <script type="text/ng-template" id="template2">
+        <form>
+            <br/>
+            <br/>
+            <fieldset>
+                <legend>Housing Loan</legend>
+                <label>Document needed:</label>
+                <input type="text" ng-model="loan.attributeB" readonly><br/>
+                <label>Document needed:</label>
+                <input type="text" ng-model="loan.attributeC" readonly>
+            </fieldset>
+        </form>
+    </script>
+</body>
+
+</html>
