@@ -1,0 +1,21 @@
+S13
+1.	Explain Transact-SQL Variable, Transact-SQL Function?
+2.	How to create a Window in Transact-SQL? Explain Windowing Components, Window Functions
+
+S14
+1. Define and describe transactions, how to implement transactions
+2. Distinguish between implicit and explicit transactions, explain transaction management
+3. Explain isolation levels
+4. Explain the scope and different types of locks
+
+S15,16
+1. Explain types of errors, error handling. 
+2. Describe the TRY-CATCH block. 
+3. Describe the importance of new error messages
+4. Describe how to perform vulnerability assessment
+5. Explain Big Data clusters
+6. Explain how to use JSON data with SQL Server 2019
+
+s17
+1. Describe PolyBase: features and advantages of PolyBase
+2. Define and describe Query Store
