@@ -85,3 +85,39 @@ select TOP 3 WITH TIES * INTO [Top3Exam]
 select * from Top3Exam
 GO
 
+
+/* select with GROUP BY */
+-- dem so sinh vien nam va nu
+select count(*) [# sv nam] from tbStudent where gender=1
+select count(*) [# sv nu] from tbStudent where gender=0
+select gender, count(*) [# sv] from tbStudent group by gender
+select case gender
+			when 1 then 'nam' else 'nu'
+	   end [gioi tinh], 
+	   count(*) [# sv] 
+	from tbStudent group by gender
+
+select case gender
+			when 1 then 'nam' else 'nu'
+	   end [gioi tinh], 
+	   count(*) [# sv] 
+	from tbStudent group by gender
+	order by 2 desc 
+go
+
+-- dem so luong sv theo do tuoi
+select YEAR(dob) [yob], count(*) [# students]
+	from tbStudent
+	group by YEAR(dob)
+
+select YEAR(dob) [yob], count(*) [# students]
+	from tbStudent
+	group by YEAR(dob)
+	having count(*) > 1 -- chi chon cac nhom co nhieu hon 1 sv
+
+select YEAR(dob) [yob], count(*) [# students]
+	from tbStudent
+	group by YEAR(dob)
+	having count(*) > 1 -- chi chon cac nhom co nhieu hon 1 sv
+	order by count(*)
+	go
