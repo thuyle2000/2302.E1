@@ -107,3 +107,25 @@ go
 sp_helptext vwExam
 go
 
+--7. them 1 nu sinh vo view nam sinh
+select * from vwShoolBoy
+
+-- sai qua sai ve mat logic !!!!
+insert vwShoolBoy VALUES ('S31', N'Nguyen Thuy Tien', 0, '2006-12-31', null, 'S20') 
+
+select * from vwShoolBoy
+select * from tbStudent
+go
+
+--8. modify lai noi dung cua view, bo sung menh de [WITH CHECK OPTION]
+ALTER VIEW vwShoolBoy as 
+	select * from tbStudent where gender = 1
+	WITH CHECK OPTION 
+go
+
+/*** test case ***/
+-- them 1 nu sinh vo view nam sinh : BAO LOI !!!
+insert vwShoolBoy VALUES ('S32', N'Huyen Tran', 0, '2008-12-31', null, 'S20') 
+
+-- them 1 nam sinh vo view nam sinh : OK !
+insert vwShoolBoy VALUES ('S32', N'Tran van B', 1, '2008-12-31', null, 'S20') 
