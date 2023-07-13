@@ -77,9 +77,10 @@ create proc up_student
 	@cnt_girl int output
 as
 begin
-	--1. liet ke ds sv
+	
 	if @yob is null
 		begin
+			--1. liet ke ds sv
 			select * from tbStudent order by dob
 			--2. dem so luong nam sinh
 			select @cnt_boy=count(*) from tbStudent where gender=1
@@ -88,6 +89,7 @@ begin
 		end
 	else
 		begin
+			--1. liet ke ds sv
 			select * from tbStudent where YEAR(dob) = @yob
 			--2. dem so luong nam sinh
 			select @cnt_boy=count(*) from tbStudent where YEAR(dob) = @yob and gender=1
@@ -121,3 +123,6 @@ declare @boy int, @girl int
 exec up_student null, @boy output, @girl output
 select @boy [# nam sinh], @girl [# nu sinh]
 go
+
+
+
