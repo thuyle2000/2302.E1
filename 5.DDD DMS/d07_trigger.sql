@@ -10,7 +10,6 @@ create trigger tg_exam on tbexam
 for insert, update
 as
 begin	
-	
 	--lay ma so sv va ma so mon hoc cua bai thi moi nhap diem
 	declare @sv varchar(5), @mh varchar(5)
 	select @sv= st_id, @mh=md_id from inserted
@@ -45,7 +44,10 @@ go
 
 
 --4. them ket qua cua nhieu bai thi
-select * from tbExam order by st_id, md_id
+select st_id, md_id, count(*) [so bai thi] 
+	from tbExam  
+	group by st_id, md_id 
+	order by st_id, md_id
 go
 
 insert tbExam values
@@ -54,6 +56,52 @@ insert tbExam values
 ('S01','AJS',80),
 ('S02','AJS',80)
 go
+
+
+/*truong hop sai khi bo du lieu dau dung nhung cac bo du lieu sau thi sai -> modify triggger*/
+insert tbExam values
+('S01','AJS',30),
+('S01','HCJS',60),
+('S02','AJS',8)
+go
+
+/*modify lai dinh nghia cua trigger [tg_exam]*/
+alter trigger tg_exam on tbexam
+after insert, update
+as
+begin	
+	if exists (select st_id, md_id, count(*) from tbExam 
+						where st_id in (select st_id from inserted) AND
+						      md_id in (select md_id from inserted)
+						group by st_id, md_id
+						having count(*)> 4    )
+	begin
+		print 'LOI: Da co sv lam bai thi 1 mon hoc qua 4 lan !'
+		rollback	-- tu choi thao tac INSERT/UPDATE 
+	end
+end
+go
+
+/* test case */
+select st_id, md_id, count(*) [so bai thi] 
+	from tbExam  
+	group by st_id, md_id 
+	order by st_id, md_id
+go
+
+
+-- them nhieu ket qua thi cho 1 lenh insert : ket qua FAIL !
+insert tbExam values
+('S01', 'LBEP', 60),  -- ket qua lan 2 : OK
+('S02', 'AJS', 90) -- ket qua lan 6 : VI PHAM LUAT  !!!
+go
+
+-- them nhieu ket qua thi cho 1 lenh insert : ket qua SUCCEEDED!
+insert tbExam values
+('S01', 'LBEP', 60),  -- ket qua lan 2 : OK
+('S02', 'LBEP', 90) -- ket qua lan 4 : OK
+go
+
 
 /*2. Tao trigger ko cho phep thay doi diem thi */
 create trigger up_exam_mark on tbExam
