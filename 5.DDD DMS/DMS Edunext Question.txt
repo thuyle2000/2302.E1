@@ -1,9 +1,9 @@
-S13
+S13 (slot 14)
 1.	Explain Transact-SQL Variable, Transact-SQL Function?	[G6]
 2.	How to create a Window in Transact-SQL? 
 	Explain Windowing Components, Window Functions 		[G7]
 
-S14
+S14 (slot 15)
 1. Define and describe transactions, how to implement 		[G3]
    transactions
 2. Distinguish between implicit and explicit transactions, 	
@@ -11,7 +11,7 @@ S14
 3. Explain isolation levels								[G4]
 4. Explain the scope and different types of locks			[G5]
 
-S15,16
+S15,16 (slot 16, 17, 18)
 1. Explain types of errors, error handling. 				[G2]
 2. Describe the TRY-CATCH block. 						[G7]
 3. Describe the importance of new error messages			[G3]
@@ -19,6 +19,6 @@ S15,16
 5. Explain Big Data clusters							[G4]
 6. Explain how to use JSON data with SQL Server 2019		[G6]
 
-s17
+s17 (slot 19,20)
 1. Describe PolyBase: features and advantages of PolyBase	[G1]
 2. Define and describe Query Store						[G1]

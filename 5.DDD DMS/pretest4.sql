@@ -51,7 +51,133 @@ create table tbStudentProject (
 	joinedDate date Not null constraint DF_joinedDate default GETDATE(),
 	rate tinyint,
 	constraint PK_studentProject primary key nonclustered(studentID , projectID),
-	constraint FK_prj foreign key (studentID) references tbStudent,
-	constraint FK_std foreign key (projectID) references tbStudent,
+	constraint FK_std foreign key (studentID) references tbStudent,
+	constraint FK_prj foreign key (projectID) references tbProjects,
 	constraint CK_rate check (rate between 1 and 5)
 )
+go
+
+/*
+3. Insert some records to each table
+*/
+
+--insert data for tbStudent
+insert tbStudent values 
+('S01', 'Tom Hanks', 18, 1),
+('S02', 'Phil Collins' ,18, 1),
+('S03', 'Jennifer Aniston', 19, 0),
+('S04', 'Jane Fonda', 20, 0),
+('S05', 'Cristiano Ronaldo', 24, 1);
+
+select * from tbStudent
+
+-- insert data into tbProjects
+set dateformat dmy
+insert tbProjects values
+('P20', 'Social Network', 'GOV' ,'12/01/2020'),
+('P21', 'React Navtive + NodeJS', 'EDU', '22/08/2020'),
+('P22', 'Google Map API', 'DEP', '15/10/2019'),
+('P23', 'nCovid Vaccine', 'GOV', '16/05/2020')
+
+select * from tbProjects
+go
+
+-- insert data into tbStudentProject
+set dateformat dmy
+insert tbStudentProject values
+('S01', 'P20', '12/02/2020', 4),
+('S01', 'P21', '12/03/2020', 5),
+('S02', 'P20', '16/02/2020', 3),
+('S02', 'P22', '01/09/2020', 5),
+('S04', 'P21', '12/04/2020', 4),
+('S04', 'P22', '01/10/2020', 3),
+('S04', 'P20', '16/10/2020', 3),
+('S03', 'P23', '04/07/2020', 5)
+
+select * from tbStudentProject
+go
+
+/*
+4. Create a clustered index ‘IX_stname’ for stname column on tbStudents table.
+   Create an index ‘IX_pID’ for projectID column on tbStudentProject table
+*/
+create clustered index ix_stname on tbstudent(stname)
+create index ix_pid on tbStudentProject(projectID)
+go
+
+/*
+5. Create a view ‘vwStudentProject’ to display the list of students joined to projects had start-date before ‘Jun-01-2020’, including following information :
+StudentID, Student name, Student Age, Project name, Start date, Join date and Rate.
+Note: this view will need to check for domain integrity and encryption.
+*/
+create view vwStudentProject WITH ENCRYPTION 
+as
+select sv.stID,sv.stName, sv.stAge, da.pName, da.pStartDate, sv_da.joinedDate, sv_da.rate
+	from tbStudentProject sv_da join tbStudent sv  on sv.stID=sv_da.studentID
+								join tbProjects da on da.pID =sv_da.projectID
+	where da.pStartDate < '2020-06-01'
+	WITH CHECK OPTION
+go
+
+-- test encryption
+sp_helptext vwStudentProject
+
+-- test view
+select * from vwStudentProject
+go
+
+/*
+6. Create a stored procedure ‘upRating’ with an input parameter ‘student-name’, and output parameter ‘avg-rate’
+
+- If ‘student-name’ is null, displays all the projects that all students have workedfor.
+  Otherwise, displays information about that students and the corresponding projects
+  they have joined.
+
+- Procedure also returns the average rate mark (avg-mark) that students joined into
+projects.
+
+*/
+create proc upRating
+	@avg_rate numeric(5,2) output , @student_name varchar(50) = null
+as
+begin
+	if @student_name is null
+	begin
+		select sv.stID,sv.stName, sv.stAge, da.pName, da.pStartDate,
+			   sv_da.joinedDate, sv_da.rate
+			from tbStudentProject sv_da join tbStudent sv  on sv.stID=sv_da.studentID
+							        join tbProjects da on da.pID =sv_da.projectID
+									
+		select @avg_rate= AVG(rate) from tbStudentProject		 
+	end
+	else
+	begin
+		select sv.stID,sv.stName, sv.stAge, da.pName, da.pStartDate,
+			   sv_da.joinedDate, sv_da.rate
+			from tbStudentProject sv_da join tbStudent sv  on sv.stID=sv_da.studentID
+							        join tbProjects da on da.pID =sv_da.projectID
+			where stName Like '%'+@student_name+'%'
+			
+		select @avg_rate= AVG(rate)
+			from tbStudentProject sv_da join tbStudent sv on 
+											sv.stID=sv_da.studentID
+						join tbProjects da on da.pID=sv_da.projectID
+		where stName Like '%'+@student_name+'%'		 
+	end
+end
+go
+
+-- test case 1:
+declare @avg numeric(5,2)
+exec upRating @avg output
+select @avg [diem binh quan]
+go
+
+-- test case 2:
+declare @avg numeric(5,2)
+exec upRating @avg output, 'Jane'
+select @avg [diem binh quan]
+go
+
+
+
