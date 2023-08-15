@@ -4,9 +4,15 @@
 */
 
 
+<<<<<<< HEAD
 /**{
     font-family: monospace;
 }*/
+=======
+*{
+    font-family: monospace;
+}
+>>>>>>> 0215c8d9031ba805efa1e22b2cf5efff3bd73750
 
 body{
     margin-left: 10px;
