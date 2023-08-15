@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<student_list>
+    <student id="sv01">
+        <fullname>Nguyen Thanh Nhan</fullname>
+        <gender>male</gender>
+        <email>nhan@gmail.com</email>
+        <yob>2002</yob>
+    </student>
+
+    <student id="sv02">
+        <fullname>Nguyen Quoc Duong</fullname>
+        <gender>male</gender>
+        <email>duong@gmail.com</email>
+        <yob>2000</yob>
+    </student>
+
+    <student id="sv04">
+        <fullname>Huynh Yen Phung</fullname>
+        <gender>female</gender>
+        <email>phung@gmail.com</email>
+        <yob>2000</yob>
+    </student>
+
+    <student id="sv05">
+        <fullname>Nghiem Kha An</fullname>
+        <gender>female</gender>
+        <email>an@gmail.com</email>
+        <yob>2004</yob>
+    </student>
+
+    <student id="sv06">
+        <fullname>Dinh Hoang Khanh Linh</fullname>
+        <gender>female</gender>
+        <email>linh@gmail.com</email>
+        <yob>2006</yob>
+    </student>
+
+    <student id="sv07">
+        <fullname>Phan van Du</fullname>
+        <gender>male</gender>
+        <email>giu@gmail.com</email>
+        <yob>2004</yob>
+    </student>
+</student_list>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- TODO define your own vocabulary/syntax. Example follows:  -->
+<!ELEMENT product_list (product+)>
+<!ELEMENT product (name, quantity, price, store*) >
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT quantity (#PCDATA)>
+<!ELEMENT price (#PCDATA)>
+<!ELEMENT store (#PCDATA)>
+<!ATTLIST product id ID #REQUIRED>
+

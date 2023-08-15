@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <!-- nut du lieu goc-->
+    <xs:element name="product_list">
+        <xs:complexType>
+            <xs:sequence>
+                <!--nut product_list chua cac product -->
+                <xs:element name="product" minOccurs="1" maxOccurs="unbounded">
+                    <!--nut product bao gom cac nut con [name, quantity, price, store]-->
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="name" type="xs:string" />
+                            <xs:element name="quantity" type="xs:positiveInteger" />
+                            <xs:element name="price" type="xs:decimal" />
+                            <xs:element name="store" type="xs:string" />
+                        </xs:sequence>
+                        
+                        <!-- dinh nghia thuoc tinh id -->
+                        <xs:attribute name="id" type="xs:string" use="required" />
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+
+</xs:schema>

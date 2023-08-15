@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <!-- nut du lieu goc-->
+    <xs:element name="product_list">
+        <xs:complexType>
+            <xs:sequence>
+                <!--nut product_list chua cac product -->
+                <xs:element name="product" type="productType" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    
+    <!-- dinh nghia kieu du lieu [productType]-->
+    <xs:complexType name="productType">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="quantity" type="xs:positiveInteger" />
+            <xs:element name="price" type="priceType" />
+            <xs:element name="store" type="storeType" />
+        </xs:sequence>
+        <xs:attribute name="id" type="productID" />
+    </xs:complexType>
+    
+    <!--dinh nghia kieu du lieu ma so san pham [productID]-->
+    <xs:simpleType name="productID">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="P\d{2}" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    
+    <!--dinh nghia kieu du lieu don gia [priceType] -->
+    <xs:simpleType name="priceType">
+        <xs:restriction base="xs:decimal">
+            <xs:fractionDigits value="2" />
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="1000" />
+        </xs:restriction>
+    </xs:simpleType>       
+
+    <!--dinh nghia kieu du lieu kho hang [storeType] -->
+    <xs:simpleType name="storeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Saigon" />
+            <xs:enumeration value="Ha-noi" />
+            <xs:enumeration value="Da-nang" />
+        </xs:restriction>
+    </xs:simpleType>   
+</xs:schema>

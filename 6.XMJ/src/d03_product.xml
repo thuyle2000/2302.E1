@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product_list
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='d03_productXSD.xsd'>
+    <product id="P01">
+        <name>Coca cola</name>
+        <quantity>3</quantity>
+        <price>5.99</price>
+        <store>cmt8, quan 3 - hcmc</store>
+    </product>
+    
+    <product id="P02">
+        <name>Beer 333</name>
+        <quantity>30</quantity>
+        <price>9.49</price>
+        <store>nguyen hue, quan 1 - hcmc</store>
+    </product>
+</product_list>
+

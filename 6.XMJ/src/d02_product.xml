@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<product_list>
+    <product id="P01">
+        <name>coca cola</name>
+        <quantity>10</quantity>
+        <price>29</price>
+    </product>
+    
+    <product id="P02">
+        <name>beer 333</name>
+        <price>40</price>
+        <quantity>20</quantity>
+    </product>
+    
+    <product id="P03">
+        <name>cake</name>
+        <quantity>15</quantity>
+        <price>45</price>
+        <store>CMT8, District 3</store>
+    </product>
+</product_list>

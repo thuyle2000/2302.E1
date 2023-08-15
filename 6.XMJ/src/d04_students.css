@@ -1,0 +1,30 @@
+/* 
+    Created on : Aug 15, 2023, 7:00:04 PM
+    Author     : THUYLM
+*/
+
+
+/**{
+    font-family: monospace;
+}*/
+
+body{
+    margin-left: 10px;
+    margin-top: 10px
+}
+h2 {
+    color: red;
+}
+h4{
+    color: green;
+}
+
+div{
+    margin: 10px 10px;
+    padding: 10px;    
+    border: thin solid burlywood;
+}
+p{
+    font-weight: bold;
+    color: orange;
+}

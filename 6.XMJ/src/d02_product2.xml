@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE product_list SYSTEM 'd02_productDTD.dtd' [
+    <!ENTITY q1 "District 1, HCMC" >
+    <!ENTITY q2 "District 2, HCMC" >
+    <!ENTITY dd "District Dong Da, HN" >
+] >
+<product_list>
+    <product id="P01">
+        <name>coca cola</name>
+        <quantity>10 lon</quantity>
+        <price>21</price>
+        <store> &dd;</store>
+    </product>
+    
+    <product id="P02">
+        <name>beer 333</name>
+        <quantity>25.99</quantity>
+        <price>40</price>
+    </product>
+    
+    <product id="P03">
+        <name>cake</name>
+        <quantity>15</quantity>
+        <price>45 usd</price>
+        <store>Tran Nao, &q2; </store>
+    </product>
+    
+    <product id="P04">
+        <name>chocolate</name>
+        <quantity>5</quantity>
+        <price>90</price>
+        <store>CMT8, &q1;</store>
+    </product>
+</product_list>

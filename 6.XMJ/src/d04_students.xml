@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Day la mot ho so sinh vien.
+Moi sinh vien bao gom :
+    - thuoc tinh: id, gender
+    - noi dung: name, email, dob, mark 
+-->
+
+<school>
+    <sc_name>FPT APTECH</sc_name>
+    <sc_address>590 Cach mang thang 8, District 3. HCMC</sc_address>
+    <sc_tel>123 456 789</sc_tel>
+    
+    <batch no="T1.2302.M0">
+  
+        <student id="SV01" gender="male">
+            <name>Nguyen Tuan Anh</name>
+            <email>anh-nguyen@fpt.edu.vn</email>
+            <yob>2000</yob>
+            <mark>78</mark>
+        </student>
+        <student id="SV02" gender="female">
+            <name>Pham Hong Nhung</name>
+            <email>nhung-pham@gmail.com</email>
+            <yob>2000</yob>
+            <mark>40</mark>
+        </student>
+        <student id="SV03" gender="male">
+            <name>Nguyen Nhat Truong</name>
+            <email>truong-nguyen@fpt.edu.vn</email>
+            <yob>1999</yob>
+            <mark>42</mark>
+        </student>
+        <student id="SV04" gender="male">
+            <name>Le Minh</name>
+            <email>minh-le@gmail.com</email>
+            <yob>2000</yob>
+            <mark>38</mark>
+        </student>
+  
+    </batch>
+    
+    <batch no="T1.2302.E1">
+        <student id="SV05" gender="female">
+            <name>Phan Kha An</name>
+            <email>an-phan@gmail.com</email>
+            <yob>2004</yob>
+            <mark>68</mark>
+        </student>
+        <student id="SV06" gender="female">
+            <name>Huynh Yen Phung</name>
+            <email>phung-huynh@gmail.com</email>
+            <yob>2002</yob>
+            <mark>68</mark>
+        </student>
+        <student id="SV07" gender="male">
+            <name>Le Ba Duong</name>
+            <email>duong-le@fpt.edu.vn</email>
+            <yob>1990</yob>
+            <mark>38</mark>
+        </student>
+            
+        <student id="SV08" gender="male">
+            <name>Nguyen Huy Hoang</name>
+            <email>hoang-nguyen@fpt.edu.vn</email>
+            <yob>2005</yob>
+            <mark>50</mark>
+        </student>
+        <student id="SV09" gender="male">
+            <name>Nguyen The Huy</name>
+            <email>huy-nguyen@fpt.edu.vn</email>
+            <yob>2004</yob>
+            <mark>45</mark>
+        </student>
+        <student id="SV10" gender="male">
+            <name>Nguyen Thanh Nhan </name>
+            <email>nhan-nguyen@fpt.edu.vn</email>
+            <yob>2000</yob>
+            <mark>50</mark>
+        </student>
+        <student id="SV11" gender="female">
+            <name>Tran Ai Linh</name>
+            <email>lin-tran@fpt.edu.vn</email>
+            <yob>2004</yob>
+            <mark>50</mark>
+        </student>
+        <student id="SV12" gender="male">
+            <name>Nguyen Minh Nhat</name>
+            <email>nhat-nguyen@fpt.edu.vn</email>
+            <yob>2000</yob>
+            <mark>75</mark>
+        </student>
+        <student id="SV13" gender="female">
+            <name>Huynh Ngoc Mai</name>
+            <email>mai-huynh@fpt.edu.vn</email>
+            <yob>2002</yob>
+            <mark>80</mark>
+        </student>
+        
+    </batch>    
+</school>
+
