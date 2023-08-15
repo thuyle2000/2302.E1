@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="d03_product.css" type="text/css" ?>
+<product_list
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xsi:noNamespaceSchemaLocation='d03_product2XSD.xsd'>
+    <product id="P01">
+        <name>coca cola</name>
+        <quantity>1</quantity>
+        <price>12.31</price>
+        <store>Da-nang</store>
+    </product>
+    <product id="P02">
+        <name>cake</name>
+        <quantity>10</quantity>
+        <price>12</price>
+        <store>Saigon</store>
+    </product>
+    <product id="P03">
+        <name>beer 333</name>
+        <quantity>5</quantity>
+        <price>13</price>
+        <store>Ha-noi</store>
+    </product>
+
+</product_list>
+

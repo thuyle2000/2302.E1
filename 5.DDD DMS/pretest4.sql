@@ -180,4 +180,16 @@ select @avg [diem binh quan]
 go
 
 
+/*
+7. Create trigger ‘tgDeleteStudent’, it will remove all projects that student have worked for whenever a DEL statement triggered on table 'tbStudents'.
+*/
+
+create trigger tgDeleteStudent on tbstudent
+instead of delete as
+begin
+	delete from tbStudentProject where studentID in (select stID from deleted)
+	delete from tbStudent where stID in (select stID from deleted)
+end
+
+
 

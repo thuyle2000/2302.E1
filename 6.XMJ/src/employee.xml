@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Employees xmlns="http://aptech-hcm.com.vn"
+    xmlns:hn="http://aptech-hn.com.vn">
+
+    <!-- namespace default: hcm -->
+    <Employee id="e01">
+        <name>Tran Viet</name>
+        <salary>1</salary>
+    </Employee>
+    <Employee id="e02">
+        <name>Nguyen The Huy</name>
+        <salary>10000</salary>
+    </Employee>
+    <Employee id="e03">
+        <name>Nguyen Quoc Hoang</name>
+        <salary>0</salary>
+    </Employee>
+    <Employee id="e04">
+        <name>Nguyen Bao Huy</name>
+        <salary>5000</salary>
+    </Employee>
+    
+    <Employee xmlns="http://aptech-fpt.com.vn" id="e05">
+        <name>Nguyen Hoang Mai</name>
+        <salary>50000</salary>
+    </Employee>
+
+    <!-- namespace hn -->
+    <hn:Employee hn:id="e10">
+        <hn:name>Doan Khanh Linh</hn:name>
+        <hn:salary>1000</hn:salary>        
+    </hn:Employee>
+    <hn:Employee hn:id="e11">
+        <hn:name>Nguyen Hue</hn:name>
+        <hn:salary>1200</hn:salary>        
+    </hn:Employee>
+</Employees>
