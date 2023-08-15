@@ -6,6 +6,7 @@
     Author     : THUYLM
     Description:
         Purpose of transformation follows.
+        Hien thi danh sach sinh vien xep thu tu theo cot diem
 -->
 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
@@ -53,6 +54,7 @@
             </thead>
             <tbody>
                 <xsl:for-each select="student">
+                    <xsl:sort select="mark" data-type="number" order="descending" />
                     <tr>
                         <td>
                             <xsl:number value="position()" />
@@ -76,6 +78,7 @@
                             <xsl:value-of select="mark" />
                         </td>
                     </tr>
+                    
                 </xsl:for-each>
             </tbody>
         </table>
