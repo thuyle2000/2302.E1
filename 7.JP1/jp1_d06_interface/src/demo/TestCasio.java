@@ -18,20 +18,35 @@ public class TestCasio {
 
     private void input() {
         Scanner sc = new Scanner(System.in);
-        System.out.print("nhap so thu 1: ");
-        a = Double.parseDouble(sc.nextLine().trim());
-        System.out.print("nhap so thu 2: ");
-        b = Double.parseDouble(sc.nextLine().trim());
+        try {
+            System.out.print("nhap so thu 1: ");
+            a = Double.parseDouble(sc.nextLine().trim());
+        } catch (Exception e) {
+            System.out.println("LOI: " + e.getMessage());
+        }
+
+        try {
+            System.out.print("nhap so thu 2: ");
+            b = Double.parseDouble(sc.nextLine().trim());
+        } catch (Exception e) {
+            System.err.println("LOI: " + e.getMessage());
+        }
+
     }
 
     private void inputN() {
         Scanner sc = new Scanner(System.in);
         while (true) {
-            System.out.print("nhap so nguyen [1-20]: ");
-            n = Integer.parseInt(sc.nextLine().trim());
-            if (n >= 1 && n <= 20) {
-                break;
+            try {
+                System.out.print("nhap so nguyen [1-20]: ");
+                n = Integer.parseInt(sc.nextLine().trim());
+                if (n >= 1 && n <= 20) {
+                    break;
+                }
+            } catch (Exception e) {
+                System.err.println("LOI : "+ e.getMessage());
             }
+
         }
     }
 
