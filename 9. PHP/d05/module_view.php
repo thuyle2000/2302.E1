@@ -9,7 +9,7 @@ $ds = ModuleDAO::get();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>modules</title>
+    <title>modules-view</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -19,7 +19,7 @@ $ds = ModuleDAO::get();
 <body>
     <div class="container">
         <h3>List of Modules</h3> <br>
-        <a href="#">Create New Module</a>
+        <a href="module_insert.php">Create New Module</a>
         <table class="table table-hover table-striped">
             <thead>
                 <tr>
